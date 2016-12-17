@@ -1,0 +1,163 @@
+body{margin:0px;background-color:#5e666d;background-image:url(../img/bk.jpg);background-repeat:repeat-x;background-position:top left;font-family:Verdana, Arial, sans-serif;font-size:70%;color:#444444;direction:ltr;}
+label{color:#444444;}
+input, select, textarea, button{font-size:100%;}
+textarea{font-family:Verdana, Arial, sans-serif;}
+h1, h2, h3, h4, h5{margin:8px 0px 4px;line-height:145%;font-weight:bold;}
+h1{font-size:146%;}
+h2{font-size:132%;}
+h3{font-size:125%;}
+h4{margin:4px 0px;font-size:110%;}
+h5{margin:4px 0px;font-size:100%;}
+a{font-weight:inherit;text-decoration:none;color:#0066A7;}
+a:visited{color:#6E4987;}
+a:hover{text-decoration:underline;}
+ul{margin:0px 0px 20px 1em;padding:0px 0px 0px 1em;list-style-type:disc;}
+li{margin:0px 0px 3px;}
+font{line-height:normal;}
+a img{border:none;}
+
+
+
+.hand {
+	cursor:hand;
+	cursor:pointer;
+}
+.diapoNav {
+	height: 20px;
+	padding-top: 3px;
+	font-size: 12px;
+	z-index: 99;
+}
+
+.diapoNumberInactive{
+	height: 16px;
+	width: 18px;
+	text-align: center;
+	font-weight: bold;
+	float: left;
+	border: 1px solid #C2C2C2;
+	color: #FFFFFF;
+	background-color: #0085FF;
+	
+}
+
+.diapoNumber {
+	height: 16px;
+	width: 18px;
+	text-align: center;
+	font-weight: bold;
+	float: left;
+	border: 1px solid #C2C2C2;
+	color: #0085FF;
+	background-color: #F2F2F2;
+}
+
+.diapoKey {
+	width: 18px;
+	height: 16px;
+	border: 1px solid #C2C2C2;
+	background-color: #F2F2F2;
+}
+.default {
+	cursor: default;
+}
+.fullscreen
+{
+	width:100%;
+	height:100%;
+}
+#page-block {
+	margin:0pt auto;
+	width:960px;
+}
+
+#deconnection{
+	text-align:right;
+	position:relative;
+	margin: 10px;
+}
+
+
+#logo-block #search-block {
+background-image:url(../img/banner-right.png);
+height:32px;
+padding-right:20px;
+}
+
+#logo-block {
+background-image:url(../img/banner-bg.png);
+background-repeat:repeat-x;
+border-bottom:1px solid #878787;
+height:2em;
+min-height:32px;
+}
+
+#logo-block #dojo-logo {
+background:transparent url(../img/banner-logo.png) no-repeat scroll 0% 50%;
+display:block;
+height:32px;
+width:172px;
+}
+
+#compte{
+position:relative;
+background-color:#555555;
+border:1px solid #444444;
+padding: 5px;
+}
+
+.dossier{
+position:relative;
+background-color:#CCCCCC;
+border:1px solid #444444;
+padding:5px;
+}
+
+.option{
+position:relative;
+background-color:#CCCCCC;
+border:1px solid #444444;
+padding:5px;
+}
+
+.item {
+	background-color: #CCCCCC;
+	height: 140px;
+	width: 110px;
+	text-align:center;
+	padding: 5px;
+}
+
+.imageItem{
+	background:white none repeat scroll 0%;
+	border-color:#C8C8C8 rgb(173, 173, 173) rgb(115, 115, 115);
+	border-style:solid;
+	border-width:1px;
+	padding:2px;
+}
+
+#menu-footer-block {
+background-image:url(../img/tab-footer-bg.png);
+background-repeat:repeat-x;
+border-top:1px solid #545454;
+height:32px;
+position:relative;
+}
+#menu-footer-block #menu-footer-left {
+background-image:url(../img/tab-footer-left.png);
+background-repeat:no-repeat;
+height:32px;
+left:0pt;
+position:absolute;
+top:0pt;
+width:20px;
+}
+#menu-footer-block #menu-footer-right {
+background-image:url(../img/tab-footer-right.png);
+background-repeat:no-repeat;
+height:32px;
+position:absolute;
+right:0pt;
+top:0pt;
+width:20px;
+}

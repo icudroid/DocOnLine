@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="UploadMonitor" class="net.dkahn.web.dwrs.UploadMonitor">
+	</bean>
+	<bean id="folder" class="net.dkahn.web.dwrs.FolderDwr">
+		<property name="manager">
+			<ref bean="repertoireManager" />
+		</property>
+		<property name="managerCompte">
+			<ref bean="compteManager" />
+		</property>
+	</bean>
+	<bean id="file" class="net.dkahn.web.dwrs.FileDwr">
+		<property name="manager">
+			<ref bean="repertoireManager" />
+		</property>
+		<property name="managerFic">
+			<ref bean="fichierManager" />
+		</property>
+	</bean>
+	<bean id="compte" class="net.dkahn.web.dwrs.CompteAmiDwr">
+		<property name="manager">
+			<ref bean="compteManager" />
+		</property>
+	</bean>
+	
+	<bean id="sessionDwr" class="net.dkahn.web.dwrs.Session" />
+</beans>

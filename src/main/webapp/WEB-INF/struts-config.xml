@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  	<data-sources />
+	<form-beans>
+		<form-bean name="loginForm" type="net.dkahn.web.forms.LoginForm"></form-bean>
+		<form-bean name="compteForm" type="net.dkahn.web.forms.CompteForm"></form-bean>
+		<form-bean name="filesForm" type="net.dkahn.web.forms.FilesForm"></form-bean>
+		<form-bean name="folderForm" type="net.dkahn.web.forms.FolderForm"></form-bean>
+	</form-beans>
+	<global-exceptions></global-exceptions>
+	<global-forwards></global-forwards>
+	<action-mappings>
+	
+		<action path="/welcome"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/login.jsp" />
+		</action>
+		
+		<action path="/goHome"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/homePage.jsp" />
+		</action>
+		
+		<action path="/login"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="loginForm"
+			input="/WEB-INF/jsp/login.jsp">
+			<forward name="success" path="/WEB-INF/jsp/homePage.jsp" />
+			<forward name="error" path="/WEB-INF/jsp/login.jsp" />
+		</action>
+		
+		<action path="/goCreateCompte"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/createCompte.jsp" />
+		</action>
+		
+		<action path="/createCompte"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="compteForm"
+			input="/WEB-INF/jsp/createCompte.jsp">
+			<forward name="error" path="/WEB-INF/jsp/createCompte.jsp" />
+			<forward name="success" path="/WEB-INF/jsp/login.jsp" />
+		</action>
+		
+		<action path="/goAddPrivateFolder"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/addFolder.jsp" />
+		</action>
+		
+		<action path="/addPrivateFolder"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="folderForm"
+			input="/WEB-INF/jsp/addFolder.jsp">
+			<forward name="success" path="/WEB-INF/jsp/homePage.jsp" />
+		</action>
+		
+		<action path="/goAddShareFolder"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/addFolder.jsp" />
+		</action>
+		
+		<action path="/addShareFolder"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="folderForm"
+			input="/WEB-INF/jsp/addFolder.jsp">
+			<forward name="success" path="/WEB-INF/jsp/homePage.jsp" />
+		</action>
+		
+		<action path="/goAddPublicFolder"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/addFolder.jsp" />
+		</action>
+		
+		<action path="/addPublicFolder"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="folderForm"
+			input="/WEB-INF/jsp/addFolder.jsp">
+			<forward name="success" path="/WEB-INF/jsp/homePage.jsp" />
+		</action>
+		
+		<action path="/showPublicUploadForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/uploadFrame.jsp" />
+		</action>
+
+		<action path="/showPrivateUploadForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/uploadFrame.jsp" />
+		</action>
+
+		<action path="/showShareUploadForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/uploadFrame.jsp" />
+		</action>
+		
+		<action path="/goPrivateUploadForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/upload.jsp" />
+		</action>
+		
+		<action path="/goPublicUploadForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/upload.jsp" />
+		</action>
+		
+		<action path="/goShareUploadForm"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/upload.jsp" />
+		</action>
+		
+		<action path="/addFiles"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			name="filesForm"
+			input="/WEB-INF/jsp/upload.jsp">
+			<forward name="success" path="/WEB-INF/jsp/redirectHome.jsp" />
+		</action>
+		
+		<action path="/deconnection"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/login.jsp" />
+		</action>
+		
+		<action path="/showPublicFile"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/showPublicFile.jsp" />
+		</action>
+		
+		<action path="/showFile"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/showFile.jsp" />
+		</action>
+		
+		<action path="/diaporama"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/diaporama.jsp" />
+		</action>
+		
+		<action path="/gestionAmis"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/amis.jsp" />
+		</action>
+		
+		<action path="/showPartageAmis"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/showAmis.jsp" />
+		</action>
+		
+		<action path="/homePublic"
+			type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="success" path="/WEB-INF/jsp/publicHome.jsp" />
+		</action>
+		
+	</action-mappings>
+	
+	<controller>
+		<set-property property="processorClass"
+			value="org.springframework.web.struts.DelegatingRequestProcessor" />
+		<set-property property="multipartClass"
+			value="net.dkahn.web.controller.ExtendedMultiPartRequestHandler"/>
+	</controller>
+	<message-resources parameter="messages" />
+	<plug-in
+		className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/applicationContext-dwr.xml,/WEB-INF/applicationContext-hibernate.xml,/WEB-INF/applicationContext.xml,/WEB-INF/action-servlet.xml" />
+	</plug-in>
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+</struts-config>

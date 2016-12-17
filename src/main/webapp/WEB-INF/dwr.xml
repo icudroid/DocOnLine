@@ -1,0 +1,48 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+
+<dwr>
+	<allow>
+		<create creator="spring" javascript="UploadMonitor" scope="application">
+            <param name="beanName" value="UploadMonitor"/>
+        </create>
+        <convert converter="bean" match="net.dkahn.web.dwrs.UploadInfo"/>
+		
+		<create creator="spring" javascript="Folder" scope="application">
+            <param name="beanName" value="folder"/>
+        </create>
+        <convert converter="bean" match="net.dkahn.web.dwrs.RemoteFolder"/>
+        <convert converter="bean" match="net.dkahn.web.dwrs.RemoteFolderInfo"/>
+        
+        <create creator="spring" javascript="File" scope="application">
+            <param name="beanName" value="file"/>
+        </create>
+        <convert converter="bean" match="net.dkahn.web.dwrs.RemoteFile"/>
+        
+        <create creator="spring" javascript="Compte" scope="application">
+            <param name="beanName" value="compte"/>
+        </create>
+        <convert converter="bean" match="net.dkahn.web.dwrs.RemoteCompte"/>
+        
+        <create creator="spring" javascript="Session" scope="application">
+            <param name="beanName" value="sessionDwr"/>
+        </create>
+		<!--  <create creator="spring" javascript="repertoires" scope="application">
+			<param name="beanName" value="todoListsDwr" />
+		</create>
+		
+		<create creator="spring" javascript="fichiers" scope="application">
+			<param name="beanName" value="todosDwr" />
+		</create>
+		
+		<convert converter="bean"
+			match="net.dkahn.remote.RemoteFichiersList" />
+		<convert converter="bean" match="net.dkahn.remote.RemoteFichier" />
+		
+		<convert converter="bean"
+			match="net.dkahn.remote.RemoteRepertoiresList" />
+		<convert converter="bean" match="net.dkahn.remote.RemoteRepertoire" />-->
+	</allow>
+</dwr>
+

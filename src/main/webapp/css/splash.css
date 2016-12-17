@@ -1,0 +1,77 @@
+#splash_screen {
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	position: absolute;
+	filter: alpha(opacity=80);
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+	z-index: 1;
+	cursor:url(curseur_diapo_close.cur),auto;
+}
+
+#content {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	opacity: 1;
+	z-index: 6;
+}
+
+#img_content {
+	background-color: #FFFFFF;
+	margin: 0;
+	padding: 0;
+	z-index: 7;
+	position:relative;
+	top:50px;
+	left:50px;
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	opacity: 1;
+	cursor:default;
+}
+
+#img_content img {
+	margin: 0;
+	padding: 0;
+	filter: alpha(opacity=100);
+	-moz-opacity: 1.0;
+	opacity: 1.0;
+	display: none;
+	z-index: 8;
+	cursor:default;
+}
+
+#splash_play {
+	margin-left:auto;
+	margin-right:auto;
+	position:absolute;
+	z-index: 2;
+	cursor:pointer;
+}
+#splash_pause {
+	margin-left:auto;
+	margin-right:auto;
+	position:absolute;
+	z-index: 3;
+	cursor: pointer;
+}
+#splash_previous {
+	margin-right:0;
+	position:absolute;
+	z-index: 4;
+	cursor: pointer;
+}
+#splash_forward {
+	margin-left:0;
+	position:absolute;
+	z-index: 5;
+	cursor:pointer;
+}
+
+div.loading {
+	background: url(img/loader-thickbox.gif) no-repeat center;
+}

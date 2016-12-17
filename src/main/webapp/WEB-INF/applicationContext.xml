@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+	<bean id="fichierManagerTarget"
+		class="net.dkahn.service.fichier.FichierManagerImpl">
+		<property name="dao">
+			<ref bean="fichierDao" />
+		</property>
+		<property name="daoRepertoire">
+			<ref bean="repertoireDao" />
+		</property>	
+		<property name="daoCompte">
+			<ref bean="compteDao" />
+		</property>
+	</bean>
+	
+	
+	<bean id="repertoireManagerTarget"
+		class="net.dkahn.service.repertoire.RepertoireManagerImpl">
+		<property name="dao">
+			<ref bean="repertoireDao" />
+		</property>
+ 		<property name="managerFic">
+			<ref bean="fichierManager" />
+		</property>
+	</bean>
+	
+	<bean id="compteManagerTarget"
+		class="net.dkahn.service.compte.CompteManagerImpl">
+		<property name="dao">
+			<ref bean="compteDao" />
+		</property>
+		<property name="managerRep">
+			<ref bean="repertoireManager" /> 
+		</property>
+		<property name="daoAmi">
+			<ref bean="compteAmiDao" />
+		</property>
+	</bean>
+
+	<bean id="compteAmiManagerTarget"
+		class="net.dkahn.service.compteami.CompteAmiManagerImpl">
+		<property name="dao">
+			<ref bean="compteDao" />
+		</property>
+		<property name="daoAmi">
+			<ref bean="compteAmiDao" />
+		</property>
+		<property name="daoRep">
+			<ref bean="repertoireDao" /> 
+		</property>
+	</bean>
+
+
+	<bean id="compteManager"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="compteManagerTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="fichierManager"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="fichierManagerTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="repertoireManager"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="repertoireManagerTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="compteAmiManager"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<property name="target">
+			<ref bean="compteAmiManagerTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="create*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
